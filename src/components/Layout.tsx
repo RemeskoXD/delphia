@@ -1,6 +1,7 @@
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { Menu, X, Leaf, Phone, Mail, MapPin, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
+import delphiaLogo from '../assets/delphialogo.webp';
 
 export default function Layout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,7 +38,7 @@ export default function Layout() {
           <div className="flex justify-between items-center h-16 md:h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center relative z-10 w-40 md:w-56 shrink-0 h-full">
-              <img src="/delphialogo.webp" alt="Delphia Logo" className="h-20 md:h-28 absolute top-0 left-0" />
+              <img src={delphiaLogo} alt="Delphia Logo" className="h-20 md:h-28 absolute top-0 left-0" />
             </Link>
 
             {/* Desktop Nav */}
@@ -131,7 +132,7 @@ export default function Layout() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-1">
               <Link to="/" className="flex items-center mb-4">
-                <img src="/delphialogo.webp" alt="Delphia Logo" className="h-20 md:h-24 bg-white rounded p-1" />
+                <img src={delphiaLogo} alt="Delphia Logo" className="h-20 md:h-24 bg-white rounded p-1" />
               </Link>
               <p className="text-sm text-slate-400 mb-4">
                 Komplexní a spolehlivé energetické služby v České republice. Pomáháme snižovat náklady a zvyšovat komfort budov.

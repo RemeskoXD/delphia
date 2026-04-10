@@ -1,4 +1,6 @@
 import { Users, Target, Award } from 'lucide-react';
+import majitelImg from '../assets/majitel.webp';
+import majitelkaImg from '../assets/majitelka.webp';
 
 export default function About() {
   return (
@@ -87,7 +89,7 @@ export default function About() {
             <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100 shadow-sm flex flex-col md:flex-row gap-8 items-start">
               <div className="shrink-0">
                 <img 
-                  src="/majitel.webp" 
+                  src={majitelImg} 
                   alt="Jaroslav Čech" 
                   className="w-48 h-48 object-cover rounded-2xl shadow-lg"
                 />
@@ -114,7 +116,7 @@ export default function About() {
             <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100 shadow-sm flex flex-col md:flex-row gap-8 items-start">
               <div className="shrink-0">
                 <img 
-                  src="/majitelka.webp" 
+                  src={majitelkaImg} 
                   alt="Kateřina Haláková" 
                   className="w-48 h-48 object-cover rounded-2xl shadow-lg"
                 />
