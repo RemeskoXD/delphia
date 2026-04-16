@@ -19,7 +19,7 @@ export default function Layout() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col font-sans text-slate-800 bg-slate-50">
+    <div className="min-h-screen flex flex-col font-sans text-neutral-800 bg-slate-50">
       {/* Top Bar */}
       <div className="bg-orange-600 text-white py-2 px-4 text-sm hidden md:block">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -34,7 +34,7 @@ export default function Layout() {
       {/* Main Navigation */}
       <header className="bg-white shadow-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16 md:h-20">
+          <div className="flex justify-between items-center h-[68px] md:h-[84px]">
             {/* Logo */}
             <Link to="/" className="flex items-center relative z-10 w-40 md:w-56 shrink-0 h-full">
               <img src="https://web2.itnahodinu.cz/delphia/delphialogo.webp" alt="Delphia Logo" className="h-20 md:h-28 absolute -top-2 md:-top-3 left-0" />
@@ -126,7 +126,7 @@ export default function Layout() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
+      <footer className="bg-black text-slate-300 py-12 border-t border-neutral-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-1">
@@ -145,6 +145,8 @@ export default function Layout() {
                 <li><Link to="/energeticke-stitky/bytove-domy" className="hover:text-orange-400 transition-colors">Štítky pro bytové domy</Link></li>
                 <li><Link to="/energeticke-stitky/ostatni-budovy" className="hover:text-orange-400 transition-colors">Štítky pro ostatní budovy</Link></li>
                 <li><Link to="/esg" className="hover:text-orange-400 transition-colors">CO2 a ESG reporting</Link></li>
+                <li><Link to="/ai-audit" className="hover:text-orange-400 transition-colors">AI Audit (EU AI Act)</Link></li>
+                <li><Link to="/3d-audit" className="hover:text-orange-400 transition-colors">3D Audit budov</Link></li>
               </ul>
             </div>
 
@@ -176,8 +178,8 @@ export default function Layout() {
               </ul>
             </div>
           </div>
-          <div className="border-t border-slate-800 mt-12 pt-8 text-sm text-center text-slate-500 flex flex-col md:flex-row justify-between items-center">
-            <p>&copy; {new Date().getFullYear()} Delphia CZ s.r.o. Všechna práva vyhrazena.</p>
+          <div className="border-t border-neutral-800 mt-12 pt-8 text-sm text-center text-slate-500 flex flex-col md:flex-row justify-between items-center">
+            <p>&copy; {new Date().getFullYear()} Delphia Czech s.r.o. Všechna práva vyhrazena.</p>
             <div className="mt-4 md:mt-0 flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
               <Link to="/ochrana-osobnich-udaju" className="hover:text-orange-400 transition-colors">Ochrana osobních údajů (GDPR)</Link>
               <p>Franšíza slovenské společnosti Delphia s.r.o.</p>

@@ -10,12 +10,12 @@ export default function ApartmentBuildings() {
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
         <div>
-          <h2 className="text-3xl font-bold text-slate-900 mb-6">Energetické štítky pro bytové domy</h2>
+          <h2 className="text-3xl font-bold text-black mb-6">Energetické štítky pro bytové domy</h2>
           <p className="text-lg text-slate-600 mb-6">
             Pro společenství vlastníků jednotek (SVJ) a bytová družstva zajišťujeme kompletní zpracování průkazů energetické náročnosti budovy (PENB).
           </p>
           
-          <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">Kdy SVJ/Družstvo potřebuje PENB?</h3>
+          <h3 className="text-xl font-semibold text-black mt-8 mb-4">Kdy SVJ/Družstvo potřebuje PENB?</h3>
           <ul className="space-y-3 mb-8">
             {[
               'Při prodeji ucelené části budovy (bytu)',
@@ -31,7 +31,7 @@ export default function ApartmentBuildings() {
             ))}
           </ul>
 
-          <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">Výhody spolupráce s námi</h3>
+          <h3 className="text-xl font-semibold text-black mt-8 mb-4">Výhody spolupráce s námi</h3>
           <ul className="list-disc pl-5 space-y-2 text-slate-600 mb-8">
             <li>Zkušenosti s velkými objekty a panelovými domy</li>
             <li>Možnost osobní prezentace výsledků na shromáždění SVJ</li>
@@ -42,7 +42,7 @@ export default function ApartmentBuildings() {
 
         <div>
           <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 sticky top-24">
-            <h3 className="text-2xl font-bold text-slate-900 mb-6">Cena a termíny</h3>
+            <h3 className="text-2xl font-bold text-black mb-6">Cena a termíny</h3>
             
             <div className="space-y-6 mb-8">
               <div className="flex items-center">
@@ -51,7 +51,7 @@ export default function ApartmentBuildings() {
                 </div>
                 <div>
                   <p className="text-sm text-slate-500 font-medium">Cena</p>
-                  <p className="text-2xl font-bold text-slate-900">Individuální <span className="text-base font-normal text-slate-500">dle velikosti</span></p>
+                  <p className="text-2xl font-bold text-black">Individuální <span className="text-base font-normal text-slate-500">dle velikosti</span></p>
                 </div>
               </div>
               
@@ -61,7 +61,7 @@ export default function ApartmentBuildings() {
                 </div>
                 <div>
                   <p className="text-sm text-slate-500 font-medium">Standardní termín</p>
-                  <p className="text-xl font-semibold text-slate-900">7 - 14 pracovních dnů</p>
+                  <p className="text-xl font-semibold text-black">7 - 14 pracovních dnů</p>
                 </div>
               </div>
 
@@ -71,7 +71,7 @@ export default function ApartmentBuildings() {
                 </div>
                 <div>
                   <p className="text-sm text-slate-500 font-medium">Platnost průkazu</p>
-                  <p className="text-xl font-semibold text-slate-900">10 let</p>
+                  <p className="text-xl font-semibold text-black">10 let</p>
                 </div>
               </div>
             </div>

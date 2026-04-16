@@ -3,10 +3,19 @@ import { BarChart3, Leaf, Globe2, TrendingDown } from 'lucide-react';
 export default function ESG() {
   return (
     <div className="bg-white min-h-screen">
-      <div className="bg-slate-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold mb-4">CO2 a ESG Reporting</h1>
-          <p className="text-xl text-slate-300 max-w-3xl">
+            <div className="relative bg-black text-white py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://delphia.sk/images/breadcrumb/Header1920new4.jpg" 
+            alt="CO2 a ESG Reporting" 
+            className="w-full h-full object-cover opacity-40"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">CO2 a ESG Reporting</h1>
+          <p className="text-xl text-slate-300 max-w-3xl leading-relaxed">
             Připravte svou firmu na udržitelnou budoucnost. Pomůžeme vám s výpočtem uhlíkové stopy a nefinančním reportingem.
           </p>
         </div>
@@ -15,7 +24,7 @@ export default function ESG() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
           <div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">Co je to ESG?</h2>
+            <h2 className="text-3xl font-bold text-black mb-6">Co je to ESG?</h2>
             <p className="text-lg text-slate-600 mb-6">
               ESG (Environmental, Social, and Governance) představuje tři hlavní oblasti, podle kterých se hodnotí udržitelnost a společenský dopad investice ve firmě.
             </p>
@@ -25,7 +34,7 @@ export default function ESG() {
                   <Leaf className="w-5 h-5 text-orange-600" />
                 </div>
                 <div>
-                  <strong className="block text-slate-900">Environmental (Životní prostředí)</strong>
+                  <strong className="block text-black">Environmental (Životní prostředí)</strong>
                   <span className="text-slate-600">Uhlíková stopa, nakládání s odpady, energetická efektivita.</span>
                 </div>
               </li>
@@ -34,7 +43,7 @@ export default function ESG() {
                   <Globe2 className="w-5 h-5 text-blue-600" />
                 </div>
                 <div>
-                  <strong className="block text-slate-900">Social (Společnost)</strong>
+                  <strong className="block text-black">Social (Společnost)</strong>
                   <span className="text-slate-600">Pracovní podmínky, bezpečnost práce, diverzita, vztahy s komunitou.</span>
                 </div>
               </li>
@@ -43,14 +52,14 @@ export default function ESG() {
                   <BarChart3 className="w-5 h-5 text-purple-600" />
                 </div>
                 <div>
-                  <strong className="block text-slate-900">Governance (Řízení)</strong>
+                  <strong className="block text-black">Governance (Řízení)</strong>
                   <span className="text-slate-600">Transparentnost, etika podnikání, struktura vedení.</span>
                 </div>
               </li>
             </ul>
           </div>
           <div className="bg-slate-50 p-8 rounded-3xl border border-slate-200">
-            <h3 className="text-2xl font-bold text-slate-900 mb-4">Proč řešit ESG a CO2?</h3>
+            <h3 className="text-2xl font-bold text-black mb-4">Proč řešit ESG a CO2?</h3>
             <ul className="space-y-3 text-slate-700">
               <li className="flex items-center"><TrendingDown className="w-5 h-5 text-orange-500 mr-3" /> Zvýšení konkurenceschopnosti</li>
               <li className="flex items-center"><TrendingDown className="w-5 h-5 text-orange-500 mr-3" /> Lepší přístup k financování (zelené úvěry)</li>

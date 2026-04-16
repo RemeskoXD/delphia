@@ -16,6 +16,8 @@ import Calculators from './pages/Calculators';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import GDPR from './pages/GDPR';
+import AIAudit from './pages/AIAudit';
+import ThreeDAudit from './pages/ThreeDAudit';
 
 export default function App() {
   return (
@@ -34,6 +36,8 @@ export default function App() {
           <Route path="kontakty" element={<Contact />} />
           <Route path="o-nas" element={<About />} />
           <Route path="ochrana-osobnich-udaju" element={<GDPR />} />
+          <Route path="ai-audit" element={<AIAudit />} />
+          <Route path="3d-audit" element={<ThreeDAudit />} />
         </Route>
       </Routes>
     </Router>

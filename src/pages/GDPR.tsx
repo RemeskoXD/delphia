@@ -2,27 +2,40 @@ import { Shield, Lock, FileText, CheckCircle } from 'lucide-react';
 
 export default function GDPR() {
   return (
-    <div className="bg-slate-50 min-h-screen py-16">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-6">
-            <Shield className="w-8 h-8 text-orange-600" />
+    <div className="bg-slate-50 min-h-screen">
+      {/* Header */}
+      <div className="relative bg-black text-white py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://delphia.sk/images/breadcrumb/Header1920new4.jpg" 
+            alt="Podmínky zpracování osobních údajů" 
+            className="w-full h-full object-cover opacity-40"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center mb-6">
+            <div className="bg-orange-500/20 p-3 rounded-xl mr-4 backdrop-blur-sm">
+              <Shield className="w-8 h-8 text-orange-400" />
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold">Podmínky zpracování osobních údajů</h1>
           </div>
-          <h1 className="text-4xl font-bold text-slate-900 mb-4">Podmínky zpracování osobních údajů</h1>
-          <p className="text-lg text-slate-600">
-            Informace o tom, jak společnost Delphia CZ s.r.o. chrání a zpracovává vaše osobní údaje.
+          <p className="text-xl text-slate-300 max-w-3xl leading-relaxed">
+            Informace o tom, jak společnost Delphia Czech s.r.o. chrání a zpracovává vaše osobní údaje.
           </p>
         </div>
+      </div>
 
-        <div className="bg-white rounded-3xl shadow-sm border border-slate-200 p-8 md:p-12 prose prose-slate max-w-none prose-headings:text-slate-900 prose-a:text-orange-600">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="bg-white rounded-3xl shadow-sm border border-slate-200 p-8 md:p-12 prose prose-slate max-w-none prose-headings:text-black prose-a:text-orange-600">
           
           <h2 className="flex items-center text-2xl font-bold mt-0">
             <FileText className="w-6 h-6 mr-3 text-orange-500" />
             1. Správce osobních údajů
           </h2>
           <p>
-            Správcem vašich osobních údajů je společnost <strong>Delphia CZ s.r.o.</strong>, se sídlem Václavské náměstí 1, 110 00 Praha 1, Česká republika.
+            Správcem vašich osobních údajů je společnost <strong>Delphia Czech s.r.o.</strong>, se sídlem Václavské náměstí 1, 110 00 Praha 1, Česká republika.
           </p>
           <p>
             Kontaktní údaje správce:<br />

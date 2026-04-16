@@ -60,23 +60,24 @@ export default function Calculators() {
   return (
     <div className="bg-slate-50 min-h-screen">
       {/* Hero Section */}
-      <div className="bg-slate-900 text-white py-16 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
+      <div className="relative bg-black text-white py-24 overflow-hidden">
+        <div className="absolute inset-0">
           <img 
-            src="https://picsum.photos/seed/architecture/1920/1080?blur=2" 
-            alt="Architektura" 
-            className="w-full h-full object-cover"
+            src="https://delphia.sk/images/breadcrumb/Header1920new4.jpg" 
+            alt="Energetické kalkulačky" 
+            className="w-full h-full object-cover opacity-40"
             referrerPolicy="no-referrer"
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center mb-6">
             <div className="bg-orange-500/20 p-3 rounded-xl mr-4 backdrop-blur-sm">
               <CalcIcon className="w-8 h-8 text-orange-400" />
             </div>
-            <h1 className="text-4xl font-bold">Energetické kalkulačky</h1>
+            <h1 className="text-4xl md:text-5xl font-bold">Energetické kalkulačky</h1>
           </div>
-          <p className="text-xl text-slate-300 max-w-2xl">
+          <p className="text-xl text-slate-300 max-w-3xl leading-relaxed">
             Spočítejte si orientační úspory po zateplení vašeho domu nebo zjistěte odhadovanou cenu za vypracování průkazu energetické náročnosti (PENB).
           </p>
         </div>
@@ -89,7 +90,7 @@ export default function Calculators() {
           <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
             <div className="bg-slate-100 p-8 border-b border-slate-200 flex items-center">
               <Zap className="w-6 h-6 text-orange-600 mr-3" />
-              <h2 className="text-2xl font-bold text-slate-900">Kalkulačka úspor zateplením</h2>
+              <h2 className="text-2xl font-bold text-black">Kalkulačka úspor zateplením</h2>
             </div>
             
             <div className="p-8 flex-grow">
@@ -143,7 +144,7 @@ export default function Calculators() {
 
               <button 
                 onClick={calculateSavings}
-                className="w-full mt-8 bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 rounded-xl transition-colors text-lg"
+                className="w-full mt-8 bg-black hover:bg-neutral-800 text-white font-bold py-4 rounded-xl transition-colors text-lg"
               >
                 Spočítat úsporu
               </button>
@@ -169,7 +170,7 @@ export default function Calculators() {
           <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
             <div className="bg-slate-100 p-8 border-b border-slate-200 flex items-center">
               <Home className="w-6 h-6 text-orange-600 mr-3" />
-              <h2 className="text-2xl font-bold text-slate-900">Odhad ceny PENB</h2>
+              <h2 className="text-2xl font-bold text-black">Odhad ceny PENB</h2>
             </div>
             
             <div className="p-8 flex-grow">
@@ -251,7 +252,7 @@ export default function Calculators() {
               {penbPrice !== null && (
                 <div className="mt-8 bg-slate-50 border border-slate-200 rounded-2xl p-6 text-center animate-in fade-in slide-in-from-bottom-4 duration-500">
                   <p className="text-slate-600 font-medium mb-1">Odhadovaná cena PENB:</p>
-                  <p className="text-4xl font-extrabold text-slate-900 mb-4">
+                  <p className="text-4xl font-extrabold text-black mb-4">
                     od {penbPrice.toLocaleString('cs-CZ')} Kč <span className="text-lg text-slate-500 font-normal">bez DPH</span>
                   </p>
                   <Link to="/kontakty" className="inline-flex items-center justify-center w-full bg-white border-2 border-slate-200 hover:border-orange-500 text-slate-700 hover:text-orange-600 font-semibold py-3 rounded-xl transition-all">

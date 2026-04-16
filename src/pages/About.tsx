@@ -3,10 +3,19 @@ import { Users, Target, Award } from 'lucide-react';
 export default function About() {
   return (
     <div className="bg-white min-h-screen">
-      <div className="bg-slate-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold mb-4">O společnosti Delphia CZ</h1>
-          <p className="text-xl text-slate-300 max-w-3xl">
+            <div className="relative bg-black text-white py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://delphia.sk/images/breadcrumb/Header1920new4.jpg" 
+            alt="O společnosti Delphia Czech" 
+            className="w-full h-full object-cover opacity-40"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">O společnosti Delphia Czech</h1>
+          <p className="text-xl text-slate-300 max-w-3xl leading-relaxed">
             Jsme franšízou úspěšné slovenské společnosti Delphia, která působí na trhu energetických služeb již od roku 2008.
           </p>
         </div>
@@ -15,7 +24,7 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
           <div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">O nás a našem zázemí</h2>
+            <h2 className="text-3xl font-bold text-black mb-6">O nás a našem zázemí</h2>
             <ul className="space-y-4 text-lg text-slate-600 leading-relaxed">
               <li className="flex items-start">
                 <span className="text-orange-600 mr-2">•</span>
@@ -51,7 +60,7 @@ export default function About() {
             <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-6">
               <Target className="w-8 h-8 text-orange-600" />
             </div>
-            <h3 className="text-xl font-bold text-slate-900 mb-3">Naše mise</h3>
+            <h3 className="text-xl font-bold text-black mb-3">Naše mise</h3>
             <p className="text-slate-600">
               Pomáhat majitelům budov a firmám snižovat energetickou náročnost, šetřit náklady a chránit životní prostředí prostřednictvím odborného poradenství.
             </p>
@@ -61,7 +70,7 @@ export default function About() {
             <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-6">
               <Users className="w-8 h-8 text-orange-600" />
             </div>
-            <h3 className="text-xl font-bold text-slate-900 mb-3">Náš tým</h3>
+            <h3 className="text-xl font-bold text-black mb-3">Náš tým</h3>
             <p className="text-slate-600">
               Tvoříme tým certifikovaných energetických specialistů, inženýrů a konzultantů, kteří se neustále vzdělávají v nových trendech a legislativě.
             </p>
@@ -71,7 +80,7 @@ export default function About() {
             <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-6">
               <Award className="w-8 h-8 text-orange-600" />
             </div>
-            <h3 className="text-xl font-bold text-slate-900 mb-3">Kvalita a odbornost</h3>
+            <h3 className="text-xl font-bold text-black mb-3">Kvalita a odbornost</h3>
             <p className="text-slate-600">
               Zakládáme si na preciznosti, rychlosti a srozumitelnosti našich výstupů. Jsme držiteli všech potřebných oprávnění pro výkon činnosti.
             </p>
@@ -80,7 +89,7 @@ export default function About() {
 
         {/* Vedení společnosti */}
         <div className="mb-16">
-          <h2 className="text-3xl font-bold text-slate-900 mb-10 text-center">Náš tým - Vedení společnosti</h2>
+          <h2 className="text-3xl font-bold text-black mb-10 text-center">Náš tým - Vedení společnosti</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             
             {/* Jaroslav Čech */}
@@ -93,7 +102,7 @@ export default function About() {
                 />
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-slate-900">Jaroslav Čech</h3>
+                <h3 className="text-2xl font-bold text-black">Jaroslav Čech</h3>
                 <p className="text-orange-600 font-medium mb-1">CEO Delphia Energy</p>
                 <p className="text-slate-500 text-sm mb-4">Telefon: +420 602 655 046 | E-mail: info@delphiaenergy.cz</p>
                 
@@ -102,10 +111,10 @@ export default function About() {
                 </blockquote>
                 
                 <ul className="space-y-2 text-sm text-slate-600">
-                  <li><strong className="text-slate-800">Vize a leadership:</strong> Staví na pilířích transparentnosti, rychlosti a nekompromisní spolehlivosti.</li>
-                  <li><strong className="text-slate-800">Expertiza:</strong> 14 let ve vrcholovém managementu Komerční banky. Hluboký vhled do financování a správy aktiv.</li>
-                  <li><strong className="text-slate-800">Realitní development:</strong> Od roku 2016 úspěšný investor a developer (land development, rezidenční a komerční projekty).</li>
-                  <li><strong className="text-slate-800">Klíčový přínos:</strong> Propojení energetického managementu (PENB, FTV) s finanční architekturou developerských celků.</li>
+                  <li><strong className="text-neutral-800">Vize a leadership:</strong> Staví na pilířích transparentnosti, rychlosti a nekompromisní spolehlivosti.</li>
+                  <li><strong className="text-neutral-800">Expertiza:</strong> 14 let ve vrcholovém managementu Komerční banky. Hluboký vhled do financování a správy aktiv.</li>
+                  <li><strong className="text-neutral-800">Realitní development:</strong> Od roku 2016 úspěšný investor a developer (land development, rezidenční a komerční projekty).</li>
+                  <li><strong className="text-neutral-800">Klíčový přínos:</strong> Propojení energetického managementu (PENB, FTV) s finanční architekturou developerských celků.</li>
                 </ul>
               </div>
             </div>
@@ -120,7 +129,7 @@ export default function About() {
                 />
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-slate-900">Kateřina Haláková</h3>
+                <h3 className="text-2xl font-bold text-black">Kateřina Haláková</h3>
                 <p className="text-orange-600 font-medium mb-1">Head of sales</p>
                 <p className="text-slate-500 text-sm mb-4">Telefon: +420 607 500 413 | E-mail: info@delphiaenergy.cz</p>
                 
@@ -129,10 +138,10 @@ export default function About() {
                 </blockquote>
                 
                 <ul className="space-y-2 text-sm text-slate-600">
-                  <li><strong className="text-slate-800">Obchodní dynamika:</strong> Expertka na budování obchodních procesů a efektivní klientský servis.</li>
-                  <li><strong className="text-slate-800">Zkušenosti:</strong> Manažerské posty v NN (řízení akvizic) a Komerční bance (vedení obchodních týmů).</li>
-                  <li><strong className="text-slate-800">Realitní vhled:</strong> Vlastní podnikání v oblasti investic a správy nemovitostí (činžovní domy, firemní objekty).</li>
-                  <li><strong className="text-slate-800">Klíčový přínos:</strong> Identifikace potenciálu úspor a zhodnocení budov skrze energetickou certifikaci a udržitelnost.</li>
+                  <li><strong className="text-neutral-800">Obchodní dynamika:</strong> Expertka na budování obchodních procesů a efektivní klientský servis.</li>
+                  <li><strong className="text-neutral-800">Zkušenosti:</strong> Manažerské posty v NN (řízení akvizic) a Komerční bance (vedení obchodních týmů).</li>
+                  <li><strong className="text-neutral-800">Realitní vhled:</strong> Vlastní podnikání v oblasti investic a správy nemovitostí (činžovní domy, firemní objekty).</li>
+                  <li><strong className="text-neutral-800">Klíčový přínos:</strong> Identifikace potenciálu úspor a zhodnocení budov skrze energetickou certifikaci a udržitelnost.</li>
                 </ul>
               </div>
             </div>

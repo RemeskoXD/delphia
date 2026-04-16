@@ -3,10 +3,19 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 export default function Contact() {
   return (
     <div className="bg-white min-h-screen">
-      <div className="bg-slate-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold mb-4">Kontaktujte nás</h1>
-          <p className="text-xl text-slate-300 max-w-3xl">
+            <div className="relative bg-black text-white py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://delphia.sk/images/breadcrumb/Header1920new4.jpg" 
+            alt="Kontaktujte nás" 
+            className="w-full h-full object-cover opacity-40"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">Kontaktujte nás</h1>
+          <p className="text-xl text-slate-300 max-w-3xl leading-relaxed">
             Máte dotaz nebo potřebujete cenovou nabídku? Jsme tu pro vás.
           </p>
         </div>
@@ -17,7 +26,7 @@ export default function Contact() {
           
           {/* Contact Info */}
           <div>
-            <h2 className="text-2xl font-bold text-slate-900 mb-8">Kontaktní údaje</h2>
+            <h2 className="text-2xl font-bold text-black mb-8">Kontaktní údaje</h2>
             
             <div className="space-y-8">
               <div className="flex items-start">
@@ -25,9 +34,9 @@ export default function Contact() {
                   <MapPin className="w-6 h-6 text-orange-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-slate-900 text-lg">Sídlo společnosti</h3>
+                  <h3 className="font-semibold text-black text-lg">Sídlo společnosti</h3>
                   <p className="text-slate-600 mt-1">
-                    Delphia CZ s.r.o.<br />
+                    Delphia Czech s.r.o.<br />
                     Václavské náměstí 1<br />
                     110 00 Praha 1<br />
                     Česká republika
@@ -41,7 +50,7 @@ export default function Contact() {
                   <Phone className="w-6 h-6 text-orange-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-slate-900 text-lg">Telefon</h3>
+                  <h3 className="font-semibold text-black text-lg">Telefon</h3>
                   <p className="text-slate-600 mt-1">+420 602 655 046</p>
                 </div>
               </div>
@@ -51,7 +60,7 @@ export default function Contact() {
                   <Mail className="w-6 h-6 text-orange-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-slate-900 text-lg">E-mail</h3>
+                  <h3 className="font-semibold text-black text-lg">E-mail</h3>
                   <p className="text-slate-600 mt-1">info@delphiaenergy.cz</p>
                 </div>
               </div>
@@ -61,7 +70,7 @@ export default function Contact() {
                   <Clock className="w-6 h-6 text-orange-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-slate-900 text-lg">Pracovní doba</h3>
+                  <h3 className="font-semibold text-black text-lg">Pracovní doba</h3>
                   <p className="text-slate-600 mt-1">
                     Po - Pá: 8:00 - 16:30<br />
                     So - Ne: Zavřeno
@@ -73,7 +82,7 @@ export default function Contact() {
 
           {/* Contact Form */}
           <div className="bg-slate-50 p-8 rounded-3xl border border-slate-200">
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">Napište nám</h2>
+            <h2 className="text-2xl font-bold text-black mb-6">Napište nám</h2>
             <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>

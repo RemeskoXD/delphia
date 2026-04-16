@@ -10,12 +10,12 @@ export default function FamilyHouses() {
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
         <div>
-          <h2 className="text-3xl font-bold text-slate-900 mb-6">Energetické štítky pro rodinné domy</h2>
+          <h2 className="text-3xl font-bold text-black mb-6">Energetické štítky pro rodinné domy</h2>
           <p className="text-lg text-slate-600 mb-6">
             Průkaz energetické náročnosti budovy (PENB) je pro rodinné domy povinný v několika situacích. Zpracujeme jej pro vás rychle, odborně a za férovou cenu.
           </p>
           
-          <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">Kdy potřebujete PENB?</h3>
+          <h3 className="text-xl font-semibold text-black mt-8 mb-4">Kdy potřebujete PENB?</h3>
           <ul className="space-y-3 mb-8">
             {[
               'Při výstavbě nového rodinného domu (pro stavební povolení)',
@@ -31,7 +31,7 @@ export default function FamilyHouses() {
             ))}
           </ul>
 
-          <h3 className="text-xl font-semibold text-slate-900 mt-8 mb-4">Co od vás budeme potřebovat?</h3>
+          <h3 className="text-xl font-semibold text-black mt-8 mb-4">Co od vás budeme potřebovat?</h3>
           <p className="text-slate-600 mb-4">Pro zpracování průkazu je ideální dodat projektovou dokumentaci:</p>
           <ul className="list-disc pl-5 space-y-2 text-slate-600 mb-8">
             <li>Půdorysy jednotlivých podlaží</li>
@@ -46,7 +46,7 @@ export default function FamilyHouses() {
 
         <div>
           <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 sticky top-24">
-            <h3 className="text-2xl font-bold text-slate-900 mb-6">Cena a termíny</h3>
+            <h3 className="text-2xl font-bold text-black mb-6">Cena a termíny</h3>
             
             <div className="space-y-6 mb-8">
               <div className="flex items-center">
@@ -55,7 +55,7 @@ export default function FamilyHouses() {
                 </div>
                 <div>
                   <p className="text-sm text-slate-500 font-medium">Cena od</p>
-                  <p className="text-2xl font-bold text-slate-900">4 500 Kč <span className="text-base font-normal text-slate-500">bez DPH</span></p>
+                  <p className="text-2xl font-bold text-black">4 500 Kč <span className="text-base font-normal text-slate-500">bez DPH</span></p>
                 </div>
               </div>
               
@@ -65,7 +65,7 @@ export default function FamilyHouses() {
                 </div>
                 <div>
                   <p className="text-sm text-slate-500 font-medium">Standardní termín</p>
-                  <p className="text-xl font-semibold text-slate-900">3 - 5 pracovních dnů</p>
+                  <p className="text-xl font-semibold text-black">3 - 5 pracovních dnů</p>
                 </div>
               </div>
 
@@ -75,7 +75,7 @@ export default function FamilyHouses() {
                 </div>
                 <div>
                   <p className="text-sm text-slate-500 font-medium">Platnost průkazu</p>
-                  <p className="text-xl font-semibold text-slate-900">10 let</p>
+                  <p className="text-xl font-semibold text-black">10 let</p>
                 </div>
               </div>
             </div>
