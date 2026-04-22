@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Calculator as CalcIcon, Zap, Home, ArrowRight, Info } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { motion } from 'motion/react';
 
 export default function Calculators() {
   // State for Savings Calculator
@@ -16,14 +17,12 @@ export default function Calculators() {
   const [penbPrice, setPenbPrice] = useState<number | null>(null);
 
   const calculateSavings = () => {
-    const baseConsumption = area * 180; // kWh/m2/rok (starší nezateplený dům)
-    
+    const baseConsumption = area * 180;
     let savingsMultiplier = 0;
-    if (insulationLevel === 'kompletni') savingsMultiplier = 0.60; // 60% úspora
-    if (insulationLevel === 'okna') savingsMultiplier = 0.15; // 15% úspora
-    if (insulationLevel === 'strecha') savingsMultiplier = 0.20; // 20% úspora
-    if (insulationLevel === 'fasada') savingsMultiplier = 0.30; // 30% úspora
-
+    if (insulationLevel === 'kompletni') savingsMultiplier = 0.60;
+    if (insulationLevel === 'okna') savingsMultiplier = 0.15;
+    if (insulationLevel === 'strecha') savingsMultiplier = 0.20;
+    if (insulationLevel === 'fasada') savingsMultiplier = 0.30;
     const newConsumption = baseConsumption * (1 - savingsMultiplier);
     
     let pricePerKwh = 0;
@@ -40,7 +39,6 @@ export default function Calculators() {
 
   const calculatePenbPrice = () => {
     let basePrice = 0;
-    
     if (buildingType === 'rodinny') {
       basePrice = penbArea <= 150 ? 3500 : 4500;
     } else if (buildingType === 'bytovy') {
@@ -48,95 +46,107 @@ export default function Calculators() {
     } else {
       basePrice = penbArea <= 500 ? 8000 : 12000;
     }
-
-    // Příplatek za chybějící dokumentaci (zaměření)
     if (!hasDocs) {
       basePrice += buildingType === 'rodinny' ? 2000 : 5000;
     }
-
     setPenbPrice(basePrice);
   };
 
   return (
-    <div className="bg-slate-50 min-h-screen">
+    <div className="bg-white min-h-screen">
       {/* Hero Section */}
-      <div className="relative bg-black text-white py-24 overflow-hidden">
+      <section className="relative bg-neutral-950 text-white py-32 md:py-48 overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://delphia.sk/images/breadcrumb/Header1920new4.jpg" 
             alt="Energetické kalkulačky" 
-            className="w-full h-full object-cover opacity-40"
+            className="w-full h-full object-cover opacity-30 mix-blend-screen"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/90 via-neutral-950/60 to-transparent"></div>
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center mb-6">
-            <div className="bg-orange-500/20 p-3 rounded-xl mr-4 backdrop-blur-sm">
-              <CalcIcon className="w-8 h-8 text-orange-400" />
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="max-w-3xl"
+          >
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/5 text-neutral-300 text-xs font-bold tracking-widest uppercase mb-8 border border-white/10 backdrop-blur-xl">
+              Analytické nástroje
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold">Energetické kalkulačky</h1>
-          </div>
-          <p className="text-xl text-slate-300 max-w-3xl leading-relaxed">
-            Spočítejte si orientační úspory po zateplení vašeho domu nebo zjistěte odhadovanou cenu za vypracování průkazu energetické náročnosti (PENB).
-          </p>
+            <h1 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter leading-tight">
+              Spočítejte si <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">své možnosti.</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-neutral-400 leading-relaxed font-medium">
+              Využijte naše chytré kalkulačky pro okamžitý odhad úspor nebo předběžnou kalkulaci ceny za zpracování průkazu PENB.
+            </p>
+          </motion.div>
         </div>
-      </div>
+      </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           
           {/* Kalkulačka úspor */}
-          <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
-            <div className="bg-slate-100 p-8 border-b border-slate-200 flex items-center">
-              <Zap className="w-6 h-6 text-orange-600 mr-3" />
-              <h2 className="text-2xl font-bold text-black">Kalkulačka úspor zateplením</h2>
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="bg-neutral-50 rounded-[2.5rem] border border-neutral-200 overflow-hidden flex flex-col shadow-xl shadow-neutral-200/50"
+          >
+            <div className="bg-white p-10 border-b border-neutral-100 flex items-center">
+              <div className="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center mr-6 border border-orange-100">
+                <Zap className="w-6 h-6 text-orange-600" />
+              </div>
+              <div>
+                <h2 className="text-2xl font-black text-neutral-950 tracking-tight">Kalkulačka úspor</h2>
+                <p className="text-neutral-500 font-medium text-sm">Finanční potenciál zateplení</p>
+              </div>
             </div>
             
-            <div className="p-8 flex-grow">
-              <div className="space-y-6">
+            <div className="p-10 flex-grow flex flex-col">
+              <div className="space-y-8 flex-grow">
                 <div>
-                  <div className="flex justify-between mb-2">
-                    <label className="text-sm font-medium text-slate-700">Podlahová plocha domu</label>
-                    <span className="text-sm font-bold text-orange-600">{area} m²</span>
+                  <div className="flex justify-between mb-4">
+                    <label className="text-sm font-bold text-neutral-950">Podlahová plocha domu</label>
+                    <span className="text-sm font-black text-orange-600 bg-orange-50 px-3 py-1 rounded-full">{area} m²</span>
                   </div>
                   <input 
                     type="range" 
                     min="50" max="400" step="10"
                     value={area}
                     onChange={(e) => setArea(Number(e.target.value))}
-                    className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-orange-600"
+                    className="w-full h-3 bg-neutral-200 rounded-lg appearance-none cursor-pointer accent-orange-600"
                   />
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Současný způsob vytápění
-                  </label>
+                  <label className="block text-sm font-bold text-neutral-950 mb-3">Způsob vytápění</label>
                   <select 
                     value={heatingType}
                     onChange={(e) => setHeatingType(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all bg-white"
+                    className="w-full px-5 py-4 rounded-2xl border border-neutral-200 focus:ring-4 focus:ring-orange-500/20 focus:border-orange-500 outline-none transition-all bg-white font-medium text-neutral-700 shadow-sm"
                   >
                     <option value="plyn">Zemní plyn</option>
-                    <option value="elektrina">Elektřina (přímotop/elektrokotel)</option>
+                    <option value="elektrina">Elektřina (přímotop či elektrokotel)</option>
                     <option value="drevo">Dřevo / Pelety</option>
                     <option value="uhli">Uhlí</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Plánované opatření
-                  </label>
+                  <label className="block text-sm font-bold text-neutral-950 mb-3">Plánované opatření</label>
                   <select 
                     value={insulationLevel}
                     onChange={(e) => setInsulationLevel(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all bg-white"
+                    className="w-full px-5 py-4 rounded-2xl border border-neutral-200 focus:ring-4 focus:ring-orange-500/20 focus:border-orange-500 outline-none transition-all bg-white font-medium text-neutral-700 shadow-sm"
                   >
                     <option value="kompletni">Kompletní zateplení (fasáda, střecha, okna)</option>
                     <option value="fasada">Zateplení fasády</option>
-                    <option value="strecha">Zateplení střechy / půdy</option>
+                    <option value="strecha">Zateplení střechy nebo půdy</option>
                     <option value="okna">Výměna oken a dveří</option>
                   </select>
                 </div>
@@ -144,57 +154,70 @@ export default function Calculators() {
 
               <button 
                 onClick={calculateSavings}
-                className="w-full mt-8 bg-black hover:bg-neutral-800 text-white font-bold py-4 rounded-xl transition-colors text-lg"
+                className="w-full mt-10 bg-neutral-950 hover:bg-neutral-800 text-white font-bold py-5 rounded-2xl transition-all shadow-xl shadow-neutral-900/20 text-lg active:scale-[0.98]"
               >
-                Spočítat úsporu
+                Spočítat analýzu
               </button>
 
               {savingsResult !== null && (
-                <div className="mt-8 bg-orange-50 border border-orange-200 rounded-2xl p-6 text-center animate-in fade-in slide-in-from-bottom-4 duration-500">
-                  <p className="text-orange-800 font-medium mb-1">Odhadovaná roční úspora:</p>
-                  <p className="text-4xl font-extrabold text-orange-600 mb-2">
-                    {Math.round(savingsResult).toLocaleString('cs-CZ')} Kč
+                <motion.div 
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mt-8 bg-orange-600 rounded-2xl p-8 text-center text-white shadow-2xl relative overflow-hidden"
+                >
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 blur-2xl rounded-full translate-x-12 -translate-y-12"></div>
+                  <p className="text-orange-100 font-medium mb-2 text-sm uppercase tracking-wider">Předpokládaná roční úspora</p>
+                  <p className="text-4xl md:text-5xl font-black mb-6">
+                    {Math.round(savingsResult).toLocaleString('cs-CZ')} <span className="text-2xl font-bold opacity-80">Kč</span>
                   </p>
-                  <div className="flex items-start text-left bg-white/60 p-3 rounded-lg mt-4">
-                    <Info className="w-5 h-5 text-orange-500 mr-2 shrink-0 mt-0.5" />
-                    <p className="text-xs text-slate-600 leading-relaxed">
-                      Tento výpočet je pouze orientační a vychází z průměrných hodnot starších nezateplených budov. Pro přesný výpočet doporučujeme zpracování energetického posudku.
+                  <div className="flex items-start text-left bg-black/20 p-4 rounded-xl border border-white/10 backdrop-blur-sm">
+                    <Info className="w-5 h-5 text-orange-200 mr-3 shrink-0 mt-0.5" />
+                    <p className="text-xs text-orange-100 leading-relaxed font-medium">
+                      Modelový výpočet je hrubý odhad z průměrných hodnot. Přesná úspora vyžaduje podrobný energetický posudek budovy.
                     </p>
                   </div>
-                </div>
+                </motion.div>
               )}
             </div>
-          </div>
+          </motion.div>
 
           {/* Kalkulačka ceny PENB */}
-          <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
-            <div className="bg-slate-100 p-8 border-b border-slate-200 flex items-center">
-              <Home className="w-6 h-6 text-orange-600 mr-3" />
-              <h2 className="text-2xl font-bold text-black">Odhad ceny PENB</h2>
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-neutral-50 rounded-[2.5rem] border border-neutral-200 overflow-hidden flex flex-col shadow-xl shadow-neutral-200/50"
+          >
+            <div className="bg-white p-10 border-b border-neutral-100 flex items-center">
+              <div className="w-14 h-14 bg-neutral-100 rounded-2xl flex items-center justify-center mr-6 border border-neutral-200">
+                <Home className="w-6 h-6 text-neutral-950" />
+              </div>
+              <div>
+                <h2 className="text-2xl font-black text-neutral-950 tracking-tight">Kalkulátor PENB</h2>
+                <p className="text-neutral-500 font-medium text-sm">Odhad ceny za zpracování štítku</p>
+              </div>
             </div>
             
-            <div className="p-8 flex-grow">
-              <div className="space-y-6">
+            <div className="p-10 flex-grow flex flex-col">
+              <div className="space-y-8 flex-grow">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Typ budovy
-                  </label>
-                  <div className="grid grid-cols-3 gap-3">
+                  <label className="block text-sm font-bold text-neutral-950 mb-3">Typ budovy</label>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     <button 
                       onClick={() => setBuildingType('rodinny')}
-                      className={`py-3 px-2 rounded-xl text-sm font-medium border transition-all ${buildingType === 'rodinny' ? 'bg-orange-50 border-orange-500 text-orange-700' : 'bg-white border-slate-200 text-slate-600 hover:border-orange-300'}`}
+                      className={`py-4 px-3 rounded-2xl text-sm font-bold border transition-all ${buildingType === 'rodinny' ? 'bg-neutral-950 border-neutral-950 text-white shadow-lg shadow-neutral-900/30' : 'bg-white border-neutral-200 text-neutral-600 hover:border-neutral-400'}`}
                     >
                       Rodinný dům
                     </button>
                     <button 
                       onClick={() => setBuildingType('bytovy')}
-                      className={`py-3 px-2 rounded-xl text-sm font-medium border transition-all ${buildingType === 'bytovy' ? 'bg-orange-50 border-orange-500 text-orange-700' : 'bg-white border-slate-200 text-slate-600 hover:border-orange-300'}`}
+                      className={`py-4 px-3 rounded-2xl text-sm font-bold border transition-all ${buildingType === 'bytovy' ? 'bg-neutral-950 border-neutral-950 text-white shadow-lg shadow-neutral-900/30' : 'bg-white border-neutral-200 text-neutral-600 hover:border-neutral-400'}`}
                     >
                       Bytový dům
                     </button>
                     <button 
                       onClick={() => setBuildingType('ostatni')}
-                      className={`py-3 px-2 rounded-xl text-sm font-medium border transition-all ${buildingType === 'ostatni' ? 'bg-orange-50 border-orange-500 text-orange-700' : 'bg-white border-slate-200 text-slate-600 hover:border-orange-300'}`}
+                      className={`py-4 px-3 rounded-2xl text-sm font-bold border transition-all ${buildingType === 'ostatni' ? 'bg-neutral-950 border-neutral-950 text-white shadow-lg shadow-neutral-900/30' : 'bg-white border-neutral-200 text-neutral-600 hover:border-neutral-400'}`}
                     >
                       Komerční
                     </button>
@@ -202,69 +225,67 @@ export default function Calculators() {
                 </div>
 
                 <div>
-                  <div className="flex justify-between mb-2">
-                    <label className="text-sm font-medium text-slate-700">Podlahová plocha</label>
-                    <span className="text-sm font-bold text-orange-600">{penbArea} m²</span>
+                  <div className="flex justify-between mb-4">
+                    <label className="text-sm font-bold text-neutral-950">Podlahová plocha prostoru</label>
+                    <span className="text-sm font-black text-neutral-950 bg-neutral-200 px-3 py-1 rounded-full">{penbArea} m²</span>
                   </div>
                   <input 
                     type="range" 
                     min="50" max={buildingType === 'rodinny' ? 400 : 2000} step="10"
                     value={penbArea}
                     onChange={(e) => setPenbArea(Number(e.target.value))}
-                    className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-orange-600"
+                    className="w-full h-3 bg-neutral-200 rounded-lg appearance-none cursor-pointer accent-neutral-950"
                   />
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-3">
-                    Máte k dispozici projektovou dokumentaci?
-                  </label>
-                  <div className="flex space-x-4">
-                    <label className="flex items-center cursor-pointer">
-                      <input 
-                        type="radio" 
-                        checked={hasDocs} 
-                        onChange={() => setHasDocs(true)}
-                        className="w-5 h-5 text-orange-600 focus:ring-orange-500 border-slate-300"
-                      />
-                      <span className="ml-2 text-slate-700">Ano, mám výkresy</span>
-                    </label>
-                    <label className="flex items-center cursor-pointer">
-                      <input 
-                        type="radio" 
-                        checked={!hasDocs} 
-                        onChange={() => setHasDocs(false)}
-                        className="w-5 h-5 text-orange-600 focus:ring-orange-500 border-slate-300"
-                      />
-                      <span className="ml-2 text-slate-700">Ne, je nutné zaměření</span>
-                    </label>
+                  <label className="block text-sm font-bold text-neutral-950 mb-4">Dostupnost projektové dokumentace</label>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <button 
+                      onClick={() => setHasDocs(true)}
+                      className={`flex flex-col items-center justify-center p-4 rounded-xl border-2 transition-all ${hasDocs ? 'border-orange-500 bg-orange-50' : 'border-neutral-200 bg-white hover:border-orange-200'}`}
+                    >
+                      <span className={`text-base font-bold mb-1 ${hasDocs ? 'text-orange-700' : 'text-neutral-700'}`}>Mám výkresy</span>
+                      <span className={`text-xs font-medium ${hasDocs ? 'text-orange-600' : 'text-neutral-500'}`}>Rychlejší proces</span>
+                    </button>
+                    <button 
+                      onClick={() => setHasDocs(false)}
+                      className={`flex flex-col items-center justify-center p-4 rounded-xl border-2 transition-all ${!hasDocs ? 'border-orange-500 bg-orange-50' : 'border-neutral-200 bg-white hover:border-orange-200'}`}
+                    >
+                      <span className={`text-base font-bold mb-1 ${!hasDocs ? 'text-orange-700' : 'text-neutral-700'}`}>Nutné zaměření</span>
+                      <span className={`text-xs font-medium ${!hasDocs ? 'text-orange-600' : 'text-neutral-500'}`}>Za příplatek</span>
+                    </button>
                   </div>
                 </div>
               </div>
 
               <button 
                 onClick={calculatePenbPrice}
-                className="w-full mt-8 bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 rounded-xl transition-colors text-lg"
+                className="w-full mt-10 bg-orange-600 hover:bg-orange-500 text-white font-bold py-5 rounded-2xl transition-all shadow-xl shadow-orange-600/20 text-lg active:scale-[0.98]"
               >
-                Spočítat odhad ceny
+                Spočítat cenový odhad
               </button>
 
               {penbPrice !== null && (
-                <div className="mt-8 bg-slate-50 border border-slate-200 rounded-2xl p-6 text-center animate-in fade-in slide-in-from-bottom-4 duration-500">
-                  <p className="text-slate-600 font-medium mb-1">Odhadovaná cena PENB:</p>
-                  <p className="text-4xl font-extrabold text-black mb-4">
-                    od {penbPrice.toLocaleString('cs-CZ')} Kč <span className="text-lg text-slate-500 font-normal">bez DPH</span>
+                <motion.div 
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mt-8 bg-white border border-neutral-200 rounded-2xl p-8 text-center shadow-lg"
+                >
+                  <p className="text-neutral-500 font-bold mb-2 text-sm uppercase tracking-wider">Předpokládaná cena PENB</p>
+                  <p className="text-4xl font-black text-neutral-950 mb-6">
+                    od {penbPrice.toLocaleString('cs-CZ')} <span className="text-xl font-bold text-neutral-400">Kč</span>
                   </p>
-                  <Link to="/kontakty" className="inline-flex items-center justify-center w-full bg-white border-2 border-slate-200 hover:border-orange-500 text-slate-700 hover:text-orange-600 font-semibold py-3 rounded-xl transition-all">
-                    Poptat přesnou cenu <ArrowRight className="ml-2 w-4 h-4" />
+                  <Link to="/kontakty" className="inline-flex items-center justify-center w-full bg-neutral-50 border border-neutral-200 hover:border-neutral-400 hover:bg-white text-neutral-950 font-bold py-4 rounded-xl transition-all shadow-sm">
+                    Poptat závaznou cenu <ArrowRight className="ml-3 w-5 h-5 text-orange-500" />
                   </Link>
-                </div>
+                </motion.div>
               )}
             </div>
-          </div>
+          </motion.div>
 
         </div>
-      </div>
+      </section>
     </div>
   );
 }
