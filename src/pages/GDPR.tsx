@@ -26,7 +26,7 @@ export default function GDPR() {
           <img 
             src="https://delphia.sk/images/breadcrumb/Header1920new4.jpg" 
             alt="Podmínky zpracování osobních údajů" 
-            className="w-full h-full object-cover opacity-20 mix-blend-luminosity"
+            className="w-full h-full object-cover opacity-40 mix-blend-luminosity"
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/80 via-neutral-950/90 to-white"></div>

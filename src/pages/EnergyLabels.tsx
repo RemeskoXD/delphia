@@ -14,7 +14,7 @@ export default function EnergyLabels() {
           <img 
             src="https://delphia.sk/images/breadcrumb/Header1920new4.jpg" 
             alt="Energetické štítky" 
-            className="w-full h-full object-cover opacity-30 mix-blend-screen"
+            className="w-full h-full object-cover opacity-50 mix-blend-screen"
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/90 via-neutral-950/60 to-transparent"></div>
@@ -188,7 +188,7 @@ export default function EnergyLabels() {
 
           {/* Jak to funguje */}
           <div className="bg-neutral-950 rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden">
-            <div className="absolute inset-0 bg-[url('https://delphia.sk/images/breadcrumb/Header1920new4.jpg')] opacity-10 mix-blend-overlay object-cover w-full h-full"></div>
+            <div className="absolute inset-0 bg-[url('https://delphia.sk/images/breadcrumb/Header1920new4.jpg')] opacity-20 mix-blend-overlay object-cover w-full h-full"></div>
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-600/20 blur-[120px] rounded-full"></div>
             
             <div className="relative z-10">

@@ -11,7 +11,7 @@ export default function ESG() {
           <img 
             src="https://delphia.sk/images/breadcrumb/Header1920new4.jpg" 
             alt="CO2 a ESG Reporting" 
-            className="w-full h-full object-cover opacity-30 mix-blend-screen"
+            className="w-full h-full object-cover opacity-50 mix-blend-screen"
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/90 via-neutral-950/60 to-transparent"></div>
@@ -167,7 +167,7 @@ export default function ESG() {
       
       {/* Mini CTA */}
       <section className="bg-neutral-950 border-t border-neutral-800 py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://delphia.sk/images/breadcrumb/Header1920new4.jpg')] opacity-10 mix-blend-overlay object-cover w-full h-full"></div>
+        <div className="absolute inset-0 bg-[url('https://delphia.sk/images/breadcrumb/Header1920new4.jpg')] opacity-30 mix-blend-overlay object-cover w-full h-full"></div>
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-600/20 blur-[120px] rounded-full"></div>
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
             <h2 className="text-3xl md:text-5xl font-black text-white mb-6 tracking-tighter">Začněte řešit ESG včas.</h2>

@@ -11,7 +11,7 @@ export default function About() {
           <img 
             src="https://delphia.sk/images/breadcrumb/Header1920new4.jpg" 
             alt="O společnosti Delphia Czech" 
-            className="w-full h-full object-cover opacity-30 mix-blend-screen"
+            className="w-full h-full object-cover opacity-50 mix-blend-screen"
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/90 via-neutral-950/60 to-transparent"></div>
@@ -124,7 +124,7 @@ export default function About() {
         <div>
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-4xl md:text-5xl font-black text-neutral-950 mb-6 tracking-tighter">
-              Kdo za námi stojí
+              České zastoupení
             </h2>
             <p className="text-xl text-neutral-500 font-medium">
               Vedení spojující zkušenosti z vrcholného bankovnictví a velkého realitního developmentu.
@@ -195,7 +195,45 @@ export default function About() {
                 </ul>
               </div>
             </motion.div>
+          </div>
 
+          {/* Slovak Executive Board (HQ) */}
+          <div className="mt-32 max-w-6xl mx-auto">
+            <div className="text-center max-w-3xl mx-auto mb-28">
+              <h2 className="text-4xl md:text-5xl font-black text-neutral-950 mb-6 tracking-tighter">
+                Vedení společnosti Delphia
+              </h2>
+              <p className="text-xl text-neutral-500 font-medium leading-relaxed">
+                Vedení společnosti Delphia zodpovídá za strategický rozvoj, odborné vedení týmů a dohled nad kvalitou poskytovaných služeb. Využívá dlouholeté zkušenosti a odborné know-how v oblasti energetiky, technických výpočtů a digitálních řešení.
+              </p>
+            </div>
+
+            <div className="flex justify-center">
+              {/* Peter Kopecký Card */}
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-[2.5rem] p-10 pt-24 pb-12 border border-neutral-200/60 shadow-xl shadow-neutral-200/50 w-full max-w-md relative text-center"
+              >
+                {/* Hexagon wrapping the image */}
+                <div 
+                  className="w-48 h-48 mx-auto absolute -top-24 left-1/2 -translate-x-1/2 overflow-hidden flex items-center justify-center bg-gradient-to-b from-neutral-100 to-neutral-300 drop-shadow-xl"
+                  style={{ clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)" }}
+                >
+                  <img 
+                    src="https://delphia.sk/images/2025/Fotky%20zamestnancov/Peter%20Kopecky.png" 
+                    alt="Ing. Peter Kopecký" 
+                    className="w-full h-full object-cover scale-[1.15] translate-y-2"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-3xl font-black text-neutral-950 tracking-tighter mb-2">Ing. Peter Kopecký</h3>
+                  <p className="text-neutral-500 font-medium text-lg">Konateľ</p>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>

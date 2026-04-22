@@ -45,9 +45,9 @@ export default function Home() {
             src="https://www.youtube.com/embed/twT0KIJANJA?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=1&playlist=twT0KIJANJA&start=94&playsinline=1&enablejsapi=1" 
             title="Background Video" 
             allow="autoplay; encrypted-media"
-            className="absolute top-1/2 left-1/2 w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2 opacity-25 mix-blend-screen"
+            className="absolute top-1/2 left-1/2 w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2 opacity-40 mix-blend-screen"
           ></iframe>
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange-950/20 via-neutral-950/80 to-neutral-950"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange-950/10 via-neutral-950/70 to-neutral-950/90"></div>
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10 flex flex-col items-center text-center">
